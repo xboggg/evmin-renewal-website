@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EvMin Renewal XV – Eternal Vows: The Unveiling</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Evans & Mina invite you to their 15th Vow Renewal: Eternal Vows - The Unveiling. Saturday, 27 December 2025 at City Hill Events Centre, Millennium City, Kasoa." />
+
+  <!-- FONTS: Elegant serif for headings + clean sans for body -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      /* VERY LIGHT ROMANTIC PURPLE & GOLD PALETTE */
+      --purple-very-light: #f8f5ff;     /* Soft Lavender White */
+      --purple-light: #e8e1f7;         /* Light Lilac */
+      --purple-medium: #d6c8f0;        /* Soft Lavender */
+      --purple-deep: #b8a1e0;          /* Muted Lilac */
+      --gold-royal: #d4af37;           /* Warm Gold */
+      --gold-soft: #8b7355;            /* Soft Brown Gold */
+      --accent-wine: #c9a8c5;          /* Dusty Rose */
+      --accent-light: #d4c2e8;
+      --text-dark: #2d1b4e;            /* Deep Purple for text */
+      --text-muted: #5d4a75;           /* Muted Purple */
+      --nav-height: 5rem;
+    }
+
+    /* BASE STYLES */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background:
+        radial-gradient(circle at top, var(--purple-very-light) 0%, var(--purple-light) 55%),
+        radial-gradient(circle at 120% 120%, var(--accent-light) 0%, var(--purple-medium) 60%);
+      color: var(--text-dark);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: color 0.3s ease, opacity 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--gold-royal);
+      opacity: 0.9;
+    }
+
+    /* UTILITY CLASSES */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* NAVBAR */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      z-index: 1000;
+      background: rgba(248, 245, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(248, 245, 255, 0.98);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 1.5rem;
+    }
+
+    .brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-royal);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--text-dark);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -0.5rem;
+      width: 0;
+      height: 3px;
+      background: var(--gold-royal);
+      transition: width 0.3s ease;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover::after {
+      width: 80%;
+    }
+
+    /* MOBILE MENU STYLES */
+    .nav-toggle {
+      display: none;
+      font-size: 1.4rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.5rem;
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      width: 100%;
+      background: rgba(248, 245, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      display: none;
+      flex-direction: column;
+      z-index: 999;
+      padding: 1rem 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu.active {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-dark);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-menu a:hover {
+      background: rgba(212, 175, 55, 0.1);
+      color: var(--gold-royal);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .nav-inner {
+        justify-content: space-between;
+      }
+    }
+
+    /* HERO - FIXED POSITIONING */
+    header {
+      position: relative;
+      min-height: 100vh;
+      height: auto;
+      overflow: visible;
+      display: flex;
+      align-items: center;
+      padding: calc(var(--nav-height) + 2rem) 0 4rem;
+      z-index: 1;
+    }
+
+    .slider {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transform: scale(1.04);
+      transition: opacity 1.8s ease, transform 12s ease;
+      filter: saturate(1.05) contrast(1.05);
+    }
+
+    /* HERO IMAGES - UPDATED WITH CORRECT IMGBB DIRECT LINKS */
+    .slide:nth-child(1) {
+      background-image: url('https://i.ibb.co/7xsGrH0h/Hero1.png');
+    }
+    
+    .slide:nth-child(2) {
+      background-image: url('https://i.ibb.co/Q3FgYv86/Hero2.png');
+    }
+    
+    .slide:nth-child(3) {
+      background-image: url('https://i.ibb.co/zH52bYb5/Hero3.png');
+    }
+
+    .slide:nth-child(4) {
+      background-image: url('https://i.ibb.co/7JBwpFTZ/Hero4.png');
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: scale(1.0);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(201, 168, 197, 0.4) 0%, transparent 50%),
+        linear-gradient(to bottom, rgba(248, 245, 255, 0.7) 0%, rgba(232, 225, 247, 0.4) 55%, rgba(248, 245, 255, 0.8) 100%),
+        radial-gradient(circle at 110% 110%, rgba(201, 168, 197, 0.3) 0%, transparent 55%);
+      z-index: -2;
+    }
+
+    .hero-main-content {
+      position: relative;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      padding: 2rem 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .hero-text-area {
+      text-align: left;
+      position: relative;
+      z-index: 20;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.45rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.7);
+      background: radial-gradient(circle at 0 0, rgba(212, 175, 55, 0.15), rgba(248, 245, 255, 0.8));
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      margin-bottom: 1.4rem;
+      color: var(--text-dark);
+      font-weight: 500;
+      animation: pulse 3s infinite;
+      position: relative;
+      z-index: 25;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+    }
+
+    .hero-tag span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold-royal);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.9);
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .hero-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+      letter-spacing: 0.18em;
+      position: relative;
+      color: var(--text-dark);
+      z-index: 20;
+    }
+
+    .hero-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(to right, var(--gold-royal), transparent);
+      border-radius: 10px;
+    }
+
+    .hero-title span.highlight {
+      color: var(--gold-royal);
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    }
+
+    .hero-theme {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.4rem, 2.8vw, 2.3rem);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      z-index: 20;
+      position: relative;
+    }
+
+    .hero-sub {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin-bottom: 1.8rem;
+      position: relative;
+      z-index: 20;
+    }
+
+    .hero-quote {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text-dark);
+      max-width: 520px;
+      border-left: 3px solid rgba(212, 175, 55, 0.7);
+      padding-left: 1rem;
+      margin-bottom: 2.4rem;
+      position: relative;
+      z-index: 20;
+    }
+
+    .hero-quote::before {
+      content: """;
+      position: absolute;
+      top: -10px;
+      left: -5px;
+      font-size: 3rem;
+      color: rgba(212, 175, 55, 0.3);
+      font-family: Georgia, serif;
+    }
+
+    .hero-quote span {
+      font-size: 0.85rem;
+      display: block;
+      margin-top: 0.4rem;
+      color: var(--text-muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      position: relative;
+      z-index: 25;
+    }
+
+    /* BUTTON STYLES */
+    .btn {
+      border-radius: 999px;
+      padding: 1rem 2rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      min-height: 54px;
+      min-width: 180px;
+      z-index: 30;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold-royal), #e6c860);
+      color: var(--text-dark);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(212, 175, 55, 0.65);
+      color: var(--text-dark);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(212, 175, 55, 0.12);
+      border-color: var(--gold-royal);
+    }
+
+    /* Countdown & Map Side Panel */
+    .hero-side-panel {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      padding: 1.6rem;
+      border-radius: 1.6rem;
+      background: radial-gradient(circle at 0 0, rgba(212, 175, 55, 0.12), rgba(248, 245, 255, 0.9));
+      backdrop-filter: blur(7px);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.1);
+      animation: float 6s ease-in-out infinite;
+      position: relative;
+      z-index: 15;
+      margin-top: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .countdown-wrapper {
+      background: linear-gradient(135deg, rgba(214, 200, 240, 0.8), rgba(201, 168, 197, 0.5));
+      padding: 1.4rem 0.75rem 1.6rem;
+      border-radius: 1.2rem;
+      border: 1px solid rgba(184, 161, 224, 0.7);
+      position: relative;
+      z-index: 16;
+    }
+
+    .countdown-wrapper h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold-royal);
+      margin-bottom: 1.2rem;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: space-around;
+      gap: 0.5rem;
+    }
+
+    .countdown div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.1;
+      min-width: 60px;
+    }
+
+    .countdown span.value {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1;
+      text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .countdown-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-top: 0.45rem;
+    }
+
+    .map-frame-wrapper {
+      width: 100%;
+      height: 250px;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      border: 2px solid var(--gold-royal);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 16;
+    }
+
+    .map-frame-wrapper:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    }
+
+    .map-frame-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* CALENDAR DROPDOWN STYLES */
+    .calendar-dropdown {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .calendar-toggle {
+      width: 100%;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .calendar-menu {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      background: rgba(248, 245, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 1rem;
+      padding: 0.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      z-index: 100;
+      margin-bottom: 0.5rem;
+    }
+
+    .calendar-menu.active {
+      display: block;
+    }
+
+    .calendar-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1rem;
+      border-radius: 0.8rem;
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.8rem;
+      border: none;
+      background: transparent;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .calendar-option:hover {
+      background: rgba(212, 175, 55, 0.1);
+      color: var(--gold-royal);
+      transform: translateX(5px);
+    }
+
+    .calendar-option i {
+      width: 16px;
+      text-align: center;
+    }
+
+    /* SLIDER DOTS - UPDATED FOR 4 SLIDES */
+    .slider-dots {
+      position: absolute;
+      left: 50%;
+      bottom: 2rem;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.6rem;
+      z-index: 5;
+    }
+
+    .slider-dots button {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid var(--text-dark);
+      cursor: pointer;
+      background: transparent;
+      transition: width 0.3s ease, background 0.3s ease;
+      min-height: 44px;
+      min-width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slider-dots button.active {
+      width: 25px;
+      background: var(--gold-royal);
+      box-shadow: 0 0 12px var(--gold-royal);
+    }
+
+    /* VERSE BANNER */
+    .verse-banner {
+      background: linear-gradient(90deg, rgba(232, 225, 247, 0.9), rgba(214, 200, 240, 0.9));
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      z-index: 5;
+      margin-top: 0;
+    }
+
+    .verse-banner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.3;
+    }
+
+    .verse-banner-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .verse-text {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--text-dark);
+      margin-bottom: 0.8rem;
+    }
+
+    .verse-ref {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-muted);
+    }
+
+    /* SECTIONS - IMPROVED SPACING */
+    main {
+      background: radial-gradient(circle at top, var(--purple-very-light) 0%, var(--purple-light) 50%);
+      position: relative;
+      z-index: 10;
+    }
+
+    section {
+      padding: 8rem 1.5rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+      position: relative;
+      z-index: 10;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* SPECIFIC FIXES FOR EACH SECTION */
+    #about {
+      padding-top: 9rem;
+    }
+
+    #details {
+      padding-top: 10rem;
+    }
+
+    #rsvp {
+      padding-top: 10rem;
+    }
+
+    #gallery {
+      padding-top: 10rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-heading {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      position: relative;
+      display: inline-block;
+      color: var(--text-dark);
+    }
+
+    .section-heading::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--gold-royal);
+      border-radius: 10px;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--gold-royal);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      align-items: flex-start;
+    }
+
+    .content-grid.two-col {
+      grid-template-columns: 1.5fr 1fr;
+    }
+
+    .card {
+      border-radius: 1.6rem;
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      background: radial-gradient(circle at 0 0, rgba(212, 175, 55, 0.08), rgba(248, 245, 255, 0.9));
+      padding: 2.5rem;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.03), transparent 70%);
+      z-index: 0;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    }
+
+    .card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      position: relative;
+      font-weight: 600;
+      z-index: 1;
+    }
+
+    .card h3 i {
+      color: var(--gold-royal);
+      margin-right: 0.5rem;
+    }
+
+    .key-line {
+      font-size: 1.02rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      position: relative;
+      z-index: 1;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+      line-height: 1.7;
+    }
+
+    /* DETAIL SECTION */
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    .detail-item {
+      padding: 1.5rem;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      background: rgba(248, 245, 255, 0.9);
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .detail-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold-royal);
+      margin-bottom: 0.6rem;
+    }
+
+    .detail-value {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    /* RSVP SECTION - IMPROVED WITH GOOGLE FORM */
+    .rsvp-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .rsvp-primary-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .form-notice {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .contact-card {
+      background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.08), rgba(248, 245, 255, 0.9));
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 1.2rem;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold-royal);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-card h4 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.3rem;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-info a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.4rem;
+      background: rgba(212, 175, 55, 0.08);
+      border-radius: 2rem;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      transition: all 0.3s ease;
+      min-height: 44px;
+      color: var(--text-dark);
+    }
+
+    .contact-info a:hover {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--gold-royal);
+      transform: translateY(-2px);
+    }
+
+    .rsvp-deadline {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: rgba(212, 175, 55, 0.08);
+      border-radius: 1rem;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .rsvp-deadline .em {
+      color: var(--gold-royal);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* GALLERY - UPDATED WITH CORRECT IMGBB DIRECT LINKS */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 1.1rem;
+      overflow: hidden;
+      border: 2px solid rgba(212, 175, 55, 0.32);
+      background: rgba(248, 245, 255, 0.9);
+      aspect-ratio: 3/4;
+      cursor: pointer;
+      box-shadow: 0 5px 22px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      border-color: var(--gold-royal);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .gallery-item::after {
+      content: "Evans & Mina • 15 Years";
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-dark);
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      z-index: 1;
+    }
+
+    .gallery-item::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(to top, rgba(248, 245, 255, 0.9), transparent);
+      z-index: 0;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 4rem 1.5rem 5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: radial-gradient(circle at top, var(--purple-very-light) 0%, var(--purple-light) 55%);
+      position: relative;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-royal), transparent);
+    }
+
+    footer span.em {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    /* FLOATING PETAL ANIMATION */
+    .petal {
+      position: fixed;
+      top: -10vh;
+      width: 24px;
+      height: 32px;
+      background: radial-gradient(ellipse at center, #d4af37 0%, #f1bcd1 35%, rgba(243, 190, 220, 0.1) 70%, transparent 80%);
+      border-radius: 60% 40% 60% 40%;
+      opacity: 0.8;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 9;
+      filter: blur(0.3px);
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(115vh) translateX(10vw) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* MUSIC TOGGLE */
+    .music-toggle {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, rgba(212, 175, 55, 0.15), rgba(248, 245, 255, 0.9));
+      border: 1px solid rgba(212, 175, 55, 0.65);
+      backdrop-filter: blur(8px);
+      color: var(--text-dark);
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      min-height: 44px;
+    }
+
+    .music-toggle:hover {
+      transform: scale(1.05);
+    }
+
+    .music-toggle i {
+      font-size: 0.95rem;
+    }
+
+    .music-toggle.playing {
+      background: linear-gradient(135deg, var(--gold-royal), #e6c860);
+      color: var(--text-dark);
+    }
+
+    @media (max-width: 600px) {
+      .music-toggle {
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.7rem;
+      }
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 992px) {
+      .hero-main-content {
+        grid-template-columns: 1fr;
+        gap: 2.4rem;
+        padding: 1rem 1.5rem 3rem;
+      }
+      .hero-text-area {
+        text-align: center;
+      }
+      .hero-tag {
+        margin: 0 auto 1.3rem;
+      }
+      .hero-sub,
+      .hero-quote {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-quote {
+        text-align: left;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .content-grid.two-col {
+        grid-template-columns: 1fr;
+      }
+      .map-frame-wrapper {
+        height: 220px;
+      }
+      .contact-cards {
+        grid-template-columns: 1fr;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      /* Improved mobile spacing */
+      section {
+        padding: 6rem 1.5rem;
+      }
+      
+      #about {
+        padding-top: 7rem;
+      }
+      
+      #details, #rsvp, #gallery {
+        padding-top: 8rem;
+      }
+      
+      .content-grid {
+        gap: 3rem;
+      }
+      
+      header {
+        padding: calc(var(--nav-height) + 1rem) 0 3rem;
+        min-height: auto;
+      }
+      
+      .verse-banner {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .calendar-menu {
+        position: fixed;
+        bottom: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 3.2rem;
+      }
+      section {
+        padding: 5rem 1.5rem;
+      }
+      
+      #about {
+        padding-top: 6rem;
+      }
+      
+      #details, #rsvp, #gallery {
+        padding-top: 7rem;
+      }
+      
+      .hero-side-panel {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+      .countdown {
+        gap: 0.7rem;
+      }
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-main-content {
+        padding: 0.5rem 1.5rem 2rem;
+      }
+      
+      .section-header {
+        margin-bottom: 3rem;
+      }
+      
+      .card {
+        padding: 2rem;
+      }
+
+      .rsvp-primary-actions {
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 2.7rem;
+      }
+      .hero-theme {
+        font-size: 1.3rem;
+        letter-spacing: 0.18em;
+      }
+      .countdown span.value {
+        font-size: 2rem;
+      }
+      .verse-text {
+        font-size: 1.1rem;
+      }
+      
+      header {
+        padding: calc(var(--nav-height) + 0.5rem) 0 2rem;
+      }
+      .hero-actions {
+        gap: 0.8rem;
+      }
+      .btn {
+        min-width: 100%;
+      }
+      
+      section {
+        padding: 4rem 1.5rem;
+      }
+      
+      #about {
+        padding-top: 5rem;
+      }
+      
+      #details, #rsvp, #gallery {
+        padding-top: 6rem;
+      }
+    }
+
+    /* Reduced motion for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">EvMin Renewal XV</div>
+      <div class="nav-links">
+        <a href="#top">Home</a>
+        <a href="#about">Our Story</a>
+        <a href="#details">Details</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu" id="navToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#top">Home</a>
+      <a href="#about">Our Story</a>
+      <a href="#details">Details</a>
+      <a href="#rsvp">RSVP</a>
+      <a href="#gallery">Gallery</a>
+    </div>
+  </nav>
+
+  <header id="top">
+    <div class="slider">
+      <!-- UPDATED: 4 SLIDES WITH CORRECT IMGBB DIRECT LINKS -->
+      <div class="slide active"></div>
+      <div class="slide"></div>
+      <div class="slide"></div>
+      <div class="slide"></div>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-main-content">
+      <div class="hero-text-area">
+        <div class="hero-tag">
+          <span class="dot"></span>
+          <span>15th Vow Renewal</span>
+        </div>
+
+        <h1 class="hero-title">
+          ETERNAL <span class="highlight">VOWS</span>
+        </h1>
+
+        <div class="hero-theme">Evans & Mina · The Unveiling</div>
+
+        <p class="hero-sub">
+          Fifteen years of laughter, tears, whispered prayers and answered ones.
+          Join us as we celebrate a love that chose to stay, grow, and become even more
+          beautiful with time.
+        </p>
+
+        <div class="hero-quote">
+          "Our love is a sacred journey, and every vow we renew strengthens our eternal bond."
+          <span>— Evans & Mina</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#rsvp" class="btn btn-primary"><i class="fas fa-heart"></i> Reserve Your Seat</a>
+          <a href="#details" class="btn btn-ghost"><i class="fas fa-scroll"></i> Ceremony Details</a>
+        </div>
+      </div>
+
+      <div class="hero-side-panel">
+        <div class="countdown-wrapper">
+          <h3>Until The Unveiling</h3>
+          <div class="countdown" id="countdown">
+            <div><span class="value" id="days">--</span><span class="countdown-label">Days</span></div>
+            <div><span class="value" id="hours">--</span><span class="countdown-label">Hrs</span></div>
+            <div><span class="value" id="minutes">--</span><span class="countdown-label">Min</span></div>
+            <div><span class="value" id="seconds">--</span><span class="countdown-label">Sec</span></div>
+          </div>
+        </div>
+
+        <div class="map-frame-wrapper">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.2170595351173!2d-0.422580650680659!3d5.496558199791025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdfbbbde5900137%3A0x3bcd8333d95faf8f!2sCity%20Hills%20Events%20Center!5e0!3m2!1sen!2sde!4v1763337428821!5m2!1sen!2sde"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="City Hill Events Centre Location">
+          </iframe>
+        </div>
+        <p class="muted" style="margin:0; font-size:0.85rem;">
+          City Hill Events Centre, Millennium City, Kasoa
+        </p>
+        <a href="#" class="btn btn-ghost" style="margin-top: 0.5rem; font-size: 0.8rem;">
+          <i class="fas fa-directions"></i> Get Directions
+        </a>
+
+        <!-- CALENDAR DROPDOWN IN HERO SECTION -->
+        <div class="calendar-dropdown">
+          <button class="calendar-toggle btn btn-ghost" style="margin-top: 0.5rem; font-size: 0.8rem;">
+            <i class="fas fa-calendar-plus"></i> Add to Calendar
+          </button>
+          <div class="calendar-menu">
+            <button class="calendar-option" data-calendar="google">
+              <i class="fab fa-google"></i> Google Calendar
+            </button>
+            <button class="calendar-option" data-calendar="apple">
+              <i class="fab fa-apple"></i> Apple Calendar
+            </button>
+            <button class="calendar-option" data-calendar="outlook">
+              <i class="fab fa-microsoft"></i> Outlook
+            </button>
+            <button class="calendar-option" data-calendar="yahoo">
+              <i class="fab fa-yahoo"></i> Yahoo Calendar
+            </button>
+            <button class="calendar-option" data-calendar="ics">
+              <i class="fas fa-download"></i> Download .ICS File
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UPDATED: 4 DOTS FOR 4 SLIDES -->
+    <div class="slider-dots" id="sliderDots">
+      <button class="active" aria-label="Slide 1"></button>
+      <button aria-label="Slide 2"></button>
+      <button aria-label="Slide 3"></button>
+      <button aria-label="Slide 4"></button>
+    </div>
+  </header>
+
+  <!-- BIBLE VERSE BANNER -->
+  <div class="verse-banner">
+    <div class="verse-banner-inner">
+      <div class="verse-text">
+        "The Lord has done great things for us, and we are filled with joy."
+      </div>
+      <div class="verse-ref">Psalm 126:3</div>
+    </div>
+  </div>
+
+  <main>
+    <section id="about" class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Our Story · His Faithfulness</div>
+        <h2 class="section-heading">Eternal Vows: The Unveiling</h2>
+      </div>
+
+      <div class="content-grid two-col">
+        <div>
+          <p class="key-line">
+            This 15th renewal is more than an event; it is a holy echo of a promise kept —
+            a tender unveiling of the beauty God has patiently written into our marriage.
+          </p>
+          <p class="muted">
+            The journey of love reflects the mystery and wonder of commitment:
+            how two people begin with dreams and promises — and over time,
+            God gently shapes each moment, revealing a deeper friendship, a stronger covenant,
+            and a more radiant version of "us" than we ever imagined.
+          </p>
+          <p class="muted">
+            On this sacred day, you are invited into our story — into a space filled with
+            heartfelt worship, renewed vows, elegant celebration, and sacred joy. Our prayer 
+            is that every couple, every friend, every heart present will be reminded: 
+            <em>love renewed is love made new.</em>
+          </p>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-star-burst"></i> Evening Highlights</h3>
+          <p class="muted">
+            <i class="fas fa-circle-check" style="color:var(--gold-royal);"></i> Elegant Arrivals & Photo Moments<br />
+            <i class="fas fa-circle-check" style="color:var(--gold-royal);"></i> Intimate Worship & Thanksgiving<br />
+            <i class="fas fa-circle-check" style="color:var(--gold-royal);"></i> Renewal of Sacred Vows<br />
+            <i class="fas fa-circle-check" style="color:var(--gold-royal);"></i> The Unveiling Ceremony<br />
+            <i class="fas fa-circle-check" style="color:var(--gold-royal);"></i> Celebration Dinner & Toast<br />
+            <i class="fas fa-circle-check" style="color:var(--gold-royal);"></i> Live Music & Special Moments
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="details" class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Important Information</div>
+        <h2 class="section-heading">Event Details</h2>
+      </div>
+
+      <div class="content-grid two-col">
+        <div class="card">
+          <h3><i class="fas fa-clipboard-list"></i> Essential Details</h3>
+          <div class="detail-grid">
+            <div class="detail-item">
+              <div class="detail-label">Date</div>
+              <div class="detail-value">Saturday, 27 Dec 2025</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Time</div>
+              <div class="detail-value">2:00 PM – 11:00 PM</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Venue</div>
+              <div class="detail-value">City Hill Events Centre</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Dress Code</div>
+              <div class="detail-value">Elegant • Purple & Gold</div>
+            </div>
+          </div>
+          <p class="muted" style="margin-top: 1.8rem;">
+            Kindly plan to arrive on time to enjoy the full ceremony and celebration.
+            Your presence from the very beginning adds to the beauty of this sacred moment.
+          </p>
+
+          <!-- CALENDAR DROPDOWN IN DETAILS SECTION -->
+          <div class="calendar-dropdown" style="margin-top: 2rem;">
+            <button class="calendar-toggle btn btn-ghost" style="width: 100%;">
+              <i class="fas fa-calendar-plus"></i> Add to Calendar
+            </button>
+            <div class="calendar-menu">
+              <button class="calendar-option" data-calendar="google">
+                <i class="fab fa-google"></i> Google Calendar
+              </button>
+              <button class="calendar-option" data-calendar="apple">
+                <i class="fab fa-apple"></i> Apple Calendar
+              </button>
+              <button class="calendar-option" data-calendar="outlook">
+                <i class="fab fa-microsoft"></i> Outlook
+              </button>
+              <button class="calendar-option" data-calendar="yahoo">
+                <i class="fab fa-yahoo"></i> Yahoo Calendar
+              </button>
+              <button class="calendar-option" data-calendar="ics">
+                <i class="fas fa-download"></i> Download .ICS File
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-eye"></i> Celebration Aesthetic</h3>
+          <p class="key-line">
+            Think elegant celebration: deep purples, soft golds, candlelight, and graceful beauty.
+          </p>
+          <p class="muted">
+            We invite you to embrace the <strong>Eternal Vows</strong> theme with your most elegant attire.
+            A touch of <strong>Purple and Gold</strong> is lovingly requested to honor our journey.
+            Let your presence reflect the beauty of lasting commitment and joyful celebration.
+          </p>
+          <div class="hero-actions" style="margin-top: 1.5rem; justify-content: flex-start;">
+            <a class="btn btn-primary" href="#" target="_blank"><i class="fas fa-location-crosshairs"></i> Get Directions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rsvp" class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Confirm Your Presence</div>
+        <h2 class="section-heading">RSVP & Coordination</h2>
+      </div>
+
+      <div class="rsvp-grid">
+        <div>
+          <p class="key-line">
+            Your response helps us prepare a warm, thoughtful experience for you.  
+            Please confirm your attendance via our digital form or by contacting our coordinators.
+          </p>
+
+          <!-- GOOGLE FORM PRIMARY ACTION -->
+          <div class="rsvp-primary-actions">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8kJHzhPGsr0GWPBMZpcC_LFmCicZ63uiL1bvuJg5sb5JKlA/viewform?usp=dialog" class="btn btn-primary" target="_blank" style="min-width: 280px;">
+              <i class="fas fa-edit"></i> Fill Digital RSVP Form
+            </a>
+            <p class="form-notice">
+              <strong>Quick & Easy:</strong> Our digital form takes just 2 minutes to complete and helps us plan everything perfectly for your comfort.
+            </p>
+          </div>
+
+          <p class="muted" style="text-align: center; margin: 2rem 0;">
+            Prefer to call? Contact our coordinators directly:
+          </p>
+
+          <div class="contact-cards">
+            <div class="contact-card">
+              <h4>Col Tenzii</h4>
+              <div class="contact-info">
+                <a href="tel:+233548187249">
+                  <i class="fas fa-phone-alt"></i>
+                  <span>054 818 7249</span>
+                </a>
+                <a href="https://wa.me/233548187249" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <h4>Afronisia</h4>
+              <div class="contact-info">
+                <a href="tel:+233546486584">
+                  <i class="fas fa-phone-alt"></i>
+                  <span>054 648 6584</span>
+                </a>
+                <a href="https://wa.me/233546486584" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <h4>Awura Nana</h4>
+              <div class="contact-info">
+                <a href="tel:+233242263963">
+                  <i class="fas fa-phone-alt"></i>
+                  <span>024 226 3963</span>
+                </a>
+                <a href="https://wa.me/233242263963" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="rsvp-deadline">
+            <p class="muted" style="margin: 0;">
+              Kindly send your confirmation by: <span class="em">Sunday, 14 December 2025</span>
+            </p>
+            <p style="margin: 0.5rem 0 0 0; color: var(--text-dark); font-weight: 500;">
+              We cannot wait to rejoice with you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Our Journey Together</div>
+        <h2 class="section-heading">Fifteen Years in Frames</h2>
+      </div>
+
+      <p class="muted" style="max-width:680px; margin:0 auto 3rem; text-align:center;">
+        A glimpse into the beautiful journey of Evans & Mina — fifteen years of love, 
+        laughter, and cherished moments that have built the foundation for this sacred renewal.
+      </p>
+
+      <div class="gallery-grid">
+        <!-- UPDATED GALLERY IMAGES WITH CORRECT IMGBB DIRECT LINKS -->
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/3y03jtnY/gal1.jpg"
+               alt="Evans & Mina - Beautiful moment together">
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/Q7s77fr1/gal2.jpg"
+               alt="Evans & Mina - Cherished memories">
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/qYkGVXqM/gal3.jpg"
+               alt="Evans & Mina - Love story continues">
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/SwCHQQBq/gal4.jpg"
+               alt="Evans & Mina - Eternal commitment">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>Evans & Mina • 15th Vow Renewal • <span class="em">Eternal Vows: The Unveiling</span></div>
+    <div style="margin-top:0.6rem;">Designed with love, gratitude, and joy for everyone sharing this sacred moment with us.</div>
+  </footer>
+
+  <!-- BACKGROUND MUSIC - UPDATED WITH YOUR DROPBOX DIRECT LINK -->
+  <audio id="bgMusic" loop preload="metadata">
+    <source src="https://www.dropbox.com/scl/fi/3rxf8tcveldwsf4kb0biq/romantic.mp3?rlkey=4g79o70ztybwqjx225700yn1q&st=78wl7759&dl=1" type="audio/mpeg" />
+  </audio>
+  
+  <div class="music-toggle" id="musicToggle">
+    <i class="fas fa-music"></i>
+    <span>Play Music</span>
+  </div>
+
+  <script>
+    // ---------- MOBILE MENU TOGGLE ----------
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      const icon = navToggle.querySelector('i');
+      if (mobileMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    // Close mobile menu when clicking on a link
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        const icon = navToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      });
+    });
+
+    // ---------- HERO SLIDER - UPDATED FOR 4 SLIDES ----------
+    const slides = document.querySelectorAll(".slide");
+    const dotsContainer = document.getElementById("sliderDots");
+    const dots = dotsContainer.querySelectorAll("button");
+    let currentSlide = 0;
+    let slideInterval = null;
+
+    function goToSlide(index) {
+      slides[currentSlide].classList.remove("active");
+      dots[currentSlide].classList.remove("active");
+      currentSlide = index;
+      slides[currentSlide].classList.add("active");
+      dots[currentSlide].classList.add("active");
+    }
+
+    function nextSlide() {
+      let nextIndex = (currentSlide + 1) % slides.length;
+      goToSlide(nextIndex);
+    }
+
+    function startSlider() {
+      slideInterval = setInterval(nextSlide, 9000);
+    }
+
+    function stopSlider() {
+      clearInterval(slideInterval);
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        stopSlider();
+        goToSlide(index);
+        startSlider();
+      });
+    });
+
+    startSlider();
+
+    // ---------- COUNTDOWN ----------
+    const targetDate = new Date("2025-12-27T14:00:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      const daysEl = document.getElementById("days");
+      const hoursEl = document.getElementById("hours");
+      const minutesEl = document.getElementById("minutes");
+      const secondsEl = document.getElementById("seconds");
+
+      if (diff <= 0) {
+        daysEl.textContent = "0";
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+        secondsEl.textContent = "00";
+        return;
+      }
+
+      const seconds = Math.floor(diff / 1000);
+      const days = Math.floor(seconds / (3600 * 24));
+      const hours = Math.floor((seconds % (3600 * 24)) / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      const secs = seconds % 60;
+
+      daysEl.textContent = days;
+      hoursEl.textContent = hours.toString().padStart(2, "0");
+      minutesEl.textContent = minutes.toString().padStart(2, "0");
+      secondsEl.textContent = secs.toString().padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ---------- SCROLL ANIMATION ----------
+    const sections = document.querySelectorAll('section');
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // ---------- FLOATING PETALS ----------
+    document.addEventListener("DOMContentLoaded", () => {
+      for (let i = 0; i < 18; i++) {
+        let petal = document.createElement("div");
+        petal.className = "petal";
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.animationDelay = (Math.random() * 8) + "s";
+        petal.style.animationDuration = (7 + Math.random() * 7) + "s";
+        document.body.appendChild(petal);
+      }
+    });
+
+    // ---------- MUSIC TOGGLE ----------
+    const music = document.getElementById("bgMusic");
+    const musicToggle = document.getElementById("musicToggle");
+
+    let isPlaying = false;
+    let userInteracted = false;
+
+    function playMusic() {
+      if (!userInteracted) {
+        music.volume = 0.3;
+        music.play().then(() => {
+          isPlaying = true;
+          musicToggle.classList.add("playing");
+          musicToggle.querySelector("span").textContent = "Pause Music";
+          userInteracted = true;
+        }).catch(e => {
+          console.log("Auto-play prevented, waiting for user interaction", e);
+          musicToggle.querySelector("span").textContent = "Click to Play";
+        });
+      } else {
+        if (isPlaying) {
+          music.pause();
+          isPlaying = false;
+          musicToggle.classList.remove("playing");
+          musicToggle.querySelector("span").textContent = "Play Music";
+        } else {
+          music.play();
+          isPlaying = true;
+          musicToggle.classList.add("playing");
+          musicToggle.querySelector("span").textContent = "Pause Music";
+        }
+      }
+    }
+
+    musicToggle.addEventListener("click", playMusic);
+
+    document.addEventListener('click', function() {
+      if (!userInteracted) {
+        userInteracted = true;
+        if (musicToggle.classList.contains('playing') && !isPlaying) {
+          music.play().then(() => {
+            isPlaying = true;
+          });
+        }
+      }
+    }, { once: true });
+
+    // ---------- NAVBAR SCROLL EFFECT ----------
+    window.addEventListener("scroll", () => {
+      const nav = document.querySelector(".nav");
+      if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    });
+
+    // ---------- ANIMATE COUNTDOWN NUMBERS ----------
+    const countdownValues = document.querySelectorAll('.countdown .value');
+    
+    function animateCountdown() {
+      countdownValues.forEach(value => {
+        value.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+          value.style.transform = 'scale(1)';
+        }, 300);
+      });
+    }
+    
+    setInterval(animateCountdown, 1000);
+
+    // ---------- CALENDAR DROPDOWN FUNCTIONALITY ----------
+    document.addEventListener('DOMContentLoaded', function() {
+      const calendarToggles = document.querySelectorAll('.calendar-toggle');
+      const calendarMenus = document.querySelectorAll('.calendar-menu');
+      const calendarOptions = document.querySelectorAll('.calendar-option');
+
+      // Toggle calendar menus
+      calendarToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const menu = this.nextElementSibling;
+          
+          // Close all other menus
+          calendarMenus.forEach(m => {
+            if (m !== menu) m.classList.remove('active');
+          });
+          
+          // Toggle current menu
+          menu.classList.toggle('active');
+        });
+      });
+
+      // Close menus when clicking outside
+      document.addEventListener('click', function() {
+        calendarMenus.forEach(menu => {
+          menu.classList.remove('active');
+        });
+      });
+
+      // Handle calendar option clicks
+      calendarOptions.forEach(option => {
+        option.addEventListener('click', function(e) {
+          e.preventDefault();
+          const calendarType = this.getAttribute('data-calendar');
+          handleCalendarAction(calendarType);
+          
+          // Close all menus
+          calendarMenus.forEach(menu => {
+            menu.classList.remove('active');
+          });
+        });
+      });
+
+      function handleCalendarAction(calendarType) {
+        const eventDetails = {
+          title: "Evans & Mina's 15th Vow Renewal - Eternal Vows: The Unveiling",
+          description: "Join us for our 15th vow renewal celebration. Fifteen years of love, laughter, and sacred promises renewed.",
+          location: "City Hill Events Centre, Millennium City, Kasoa",
+          start: new Date('2025-12-27T14:00:00'),
+          end: new Date('2025-12-27T23:00:00')
+        };
+
+        switch (calendarType) {
+          case 'google':
+            const googleUrl = generateGoogleCalendarUrl(eventDetails);
+            window.open(googleUrl, '_blank');
+            break;
+            
+          case 'apple':
+            const appleUrl = generateAppleCalendarUrl(eventDetails);
+            window.open(appleUrl, '_blank');
+            break;
+            
+          case 'outlook':
+            const outlookUrl = generateOutlookCalendarUrl(eventDetails);
+            window.open(outlookUrl, '_blank');
+            break;
+            
+          case 'yahoo':
+            const yahooUrl = generateYahooCalendarUrl(eventDetails);
+            window.open(yahooUrl, '_blank');
+            break;
+            
+          case 'ics':
+            downloadICSFile(eventDetails);
+            break;
+        }
+      }
+
+      function generateGoogleCalendarUrl(details) {
+        const start = details.start.toISOString().replace(/-|:|\.\d+/g, '');
+        const end = details.end.toISOString().replace(/-|:|\.\d+/g, '');
+        
+        return `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${start}/${end}&text=${encodeURIComponent(details.title)}&details=${encodeURIComponent(details.description)}&location=${encodeURIComponent(details.location)}`;
+      }
+
+      function generateAppleCalendarUrl(details) {
+        const start = details.start.toISOString().replace(/-|:|\.\d+/g, '');
+        const end = details.end.toISOString().replace(/-|:|\.\d+/g, '');
+        
+        return `data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:${start}%0ADTEND:${end}%0ASUMMARY:${encodeURIComponent(details.title)}%0ADESCRIPTION:${encodeURIComponent(details.description)}%0ALOCATION:${encodeURIComponent(details.location)}%0AEND:VEVENT%0AEND:VCALENDAR`;
+      }
+
+      function generateOutlookCalendarUrl(details) {
+        const start = details.start.toISOString();
+        const end = details.end.toISOString();
+        
+        return `https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(details.title)}&body=${encodeURIComponent(details.description)}&location=${encodeURIComponent(details.location)}&startdt=${start}&enddt=${end}`;
+      }
+
+      function generateYahooCalendarUrl(details) {
+        const start = Math.floor(details.start.getTime() / 1000);
+        const end = Math.floor(details.end.getTime() / 1000);
+        
+        return `https://calendar.yahoo.com/?v=60&view=d&type=20&title=${encodeURIComponent(details.title)}&st=${start}&dur=${end-start}&desc=${encodeURIComponent(details.description)}&in_loc=${encodeURIComponent(details.location)}`;
+      }
+
+      function downloadICSFile(details) {
+        const start = details.start.toISOString().replace(/-|:|\.\d+/g, '');
+        const end = details.end.toISOString().replace(/-|:|\.\d+/g, '');
+        
+        const icsContent = [
+          'BEGIN:VCALENDAR',
+          'VERSION:2.0',
+          'BEGIN:VEVENT',
+          `DTSTART:${start}`,
+          `DTEND:${end}`,
+          `SUMMARY:${details.title}`,
+          `DESCRIPTION:${details.description}`,
+          `LOCATION:${details.location}`,
+          'BEGIN:VALARM',
+          'TRIGGER:-P1D',
+          'ACTION:DISPLAY',
+          'DESCRIPTION:Reminder',
+          'END:VALARM',
+          'END:VEVENT',
+          'END:VCALENDAR'
+        ].join('\n');
+        
+        const blob = new Blob([icsContent], { type: 'text/calendar' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'evans-mina-vow-renewal.ics';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      }
+    });
+  </script>
+</body>
+</html>
