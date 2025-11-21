@@ -1004,7 +1004,7 @@
       width: max-content;
     }
     
-    /* FIX: Added webkit prefix and translateZ(0) to force hardware acceleration */
+    /* FIX: Added translateZ(0) to force hardware acceleration */
     @keyframes scrollGallery {
       0% {
         transform: translateX(0) translateZ(0);
@@ -1021,6 +1021,11 @@
       100% {
         -webkit-transform: translateX(calc(-100% + 100vw)) translateZ(0);
       }
+    }
+    
+    /* NEW CSS CLASS TO MANAGE PLAY STATE */
+    .gallery-grid.paused-by-visibility {
+        animation-play-state: paused !important;
     }
 
     .gallery-item {
@@ -1041,7 +1046,7 @@
       border-color: var(--gold-royal);
       transform: translateY(-5px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-      animation-play-state: paused;
+      /* Note: Hover pause logic is now handled in JS for consistency */
     }
 
     .gallery-item img {
@@ -2121,13 +2126,35 @@
     const pauseBtn = document.getElementById('pauseBtn');
     const playBtn = document.getElementById('playBtn');
     
+    // Flag to track if user paused it manually
+    let manuallyPaused = false;
+    
+    // Function to handle browser tab visibility changes
+    function handleVisibilityChange() {
+        if (document.hidden) {
+            // Tab is inactive, pause animation unless manually paused by user
+            if (!manuallyPaused) {
+                galleryGrid.classList.add('paused-by-visibility');
+            }
+        } else {
+            // Tab is active, resume animation if it wasn't manually paused
+            if (!manuallyPaused) {
+                galleryGrid.classList.remove('paused-by-visibility');
+            }
+        }
+    }
+    
+    // Listen for the visibility change event
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
     // Pause scrolling when hovering over gallery
     galleryGrid.addEventListener('mouseenter', () => {
       galleryGrid.style.animationPlayState = 'paused';
     });
     
     galleryGrid.addEventListener('mouseleave', () => {
-      if (!galleryGrid.classList.contains('paused')) {
+      // Resume only if not manually paused and tab is visible
+      if (!manuallyPaused && !document.hidden) {
         galleryGrid.style.animationPlayState = 'running';
       }
     });
@@ -2136,11 +2163,14 @@
     pauseBtn.addEventListener('click', () => {
       galleryGrid.style.animationPlayState = 'paused';
       galleryGrid.classList.add('paused');
+      manuallyPaused = true; // Set flag for manual pause
     });
     
     playBtn.addEventListener('click', () => {
       galleryGrid.style.animationPlayState = 'running';
       galleryGrid.classList.remove('paused');
+      manuallyPaused = false; // Clear flag for manual pause
+      galleryGrid.classList.remove('paused-by-visibility'); // Ensure visibility pause is cleared
     });
     
     // Initial check to ensure animation starts on load
@@ -2148,6 +2178,7 @@
         if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             galleryGrid.style.animationPlayState = 'running';
             galleryGrid.classList.remove('paused');
+            galleryGrid.classList.remove('paused-by-visibility');
         }
     }
   </script>
