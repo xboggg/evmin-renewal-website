@@ -509,8 +509,13 @@
       font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      color: var(--gold-royal);
+      color: var(--text-dark);
       margin-bottom: 1.2rem;
+      background: rgba(248, 245, 255, 0.7);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     .countdown {
@@ -986,10 +991,27 @@
     }
 
     /* GALLERY - UPDATED WITH CORRECT IMGBB DIRECT LINKS */
+    .gallery-container {
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
       gap: 2rem;
+      animation: scrollGallery 30s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes scrollGallery {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-100% + 100vw));
+      }
     }
 
     .gallery-item {
@@ -1002,12 +1024,15 @@
       cursor: pointer;
       box-shadow: 0 5px 22px rgba(0, 0, 0, 0.08);
       transition: all 0.3s ease;
+      flex: 0 0 auto;
+      width: 280px;
     }
 
     .gallery-item:hover {
       border-color: var(--gold-royal);
       transform: translateY(-5px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+      animation-play-state: paused;
     }
 
     .gallery-item img {
@@ -1046,6 +1071,32 @@
 
     .gallery-item:hover img {
       transform: scale(1.08);
+    }
+
+    .gallery-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-btn {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: var(--text-dark);
+    }
+
+    .gallery-btn:hover {
+      background: rgba(212, 175, 55, 0.2);
+      transform: scale(1.1);
     }
 
     /* FOOTER */
@@ -1175,8 +1226,8 @@
       .contact-cards {
         grid-template-columns: 1fr;
       }
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .gallery-item {
+        width: 240px;
       }
       
       /* Improved mobile spacing */
@@ -1242,8 +1293,8 @@
         width: 100%;
         justify-content: center;
       }
-      .gallery-grid {
-        grid-template-columns: 1fr;
+      .gallery-item {
+        width: 200px;
       }
       
       .hero-main-content {
@@ -1299,6 +1350,10 @@
       #details, #rsvp, #gallery {
         padding-top: 6rem;
       }
+      
+      .gallery-item {
+        width: 180px;
+      }
     }
 
     /* Reduced motion for accessibility */
@@ -1307,6 +1362,13 @@
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+      }
+      
+      .gallery-grid {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
       }
     }
   </style>
@@ -1658,24 +1720,41 @@
         laughter, and cherished moments that have built the foundation for this sacred renewal.
       </p>
 
-      <div class="gallery-grid">
-        <!-- UPDATED GALLERY IMAGES WITH CORRECT IMGBB DIRECT LINKS -->
-        <div class="gallery-item">
-          <img src="https://i.ibb.co/3y03jtnY/gal1.jpg"
-               alt="Evans & Mina - Beautiful moment together">
+      <div class="gallery-container">
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- UPDATED GALLERY IMAGES WITH REORDERED SEQUENCE -->
+          <div class="gallery-item">
+            <img src="https://i.ibb.co/3y03jtnY/gal1.jpg"
+                 alt="Evans & Mina - Beautiful moment together">
+          </div>
+          <!-- gal5 is now the 2nd image -->
+          <div class="gallery-item">
+            <img src="https://i.ibb.co/234W4XTt/gal5.jpg"
+                 alt="Evans & Mina - Special moments">
+          </div>
+          <div class="gallery-item">
+            <img src="https://i.ibb.co/Q7s77fr1/gal2.jpg"
+                 alt="Evans & Mina - Cherished memories">
+          </div>
+          <div class="gallery-item">
+            <img src="https://i.ibb.co/SwCHQQBq/gal4.jpg"
+                 alt="Evans & Mina - Eternal commitment">
+          </div>
+          <!-- gal3 is now the last image -->
+          <div class="gallery-item">
+            <img src="https://i.ibb.co/qYkGVXqM/gal3.jpg"
+                 alt="Evans & Mina - Love story continues">
+          </div>
         </div>
-        <div class="gallery-item">
-          <img src="https://i.ibb.co/Q7s77fr1/gal2.jpg"
-               alt="Evans & Mina - Cherished memories">
-        </div>
-        <div class="gallery-item">
-          <img src="https://i.ibb.co/qYkGVXqM/gal3.jpg"
-               alt="Evans & Mina - Love story continues">
-        </div>
-        <div class="gallery-item">
-          <img src="https://i.ibb.co/SwCHQQBq/gal4.jpg"
-               alt="Evans & Mina - Eternal commitment">
-        </div>
+      </div>
+      
+      <div class="gallery-controls">
+        <button class="gallery-btn" id="pauseBtn" title="Pause scrolling">
+          <i class="fas fa-pause"></i>
+        </button>
+        <button class="gallery-btn" id="playBtn" title="Resume scrolling">
+          <i class="fas fa-play"></i>
+        </button>
       </div>
     </section>
   </main>
@@ -2040,6 +2119,33 @@
         document.body.removeChild(a);
         window.URL.revokeObjectURL(url);
       }
+    });
+
+    // ---------- GALLERY AUTO-SCROLL ----------
+    const galleryGrid = document.getElementById('galleryGrid');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const playBtn = document.getElementById('playBtn');
+    
+    // Pause scrolling when hovering over gallery
+    galleryGrid.addEventListener('mouseenter', () => {
+      galleryGrid.style.animationPlayState = 'paused';
+    });
+    
+    galleryGrid.addEventListener('mouseleave', () => {
+      if (!galleryGrid.classList.contains('paused')) {
+        galleryGrid.style.animationPlayState = 'running';
+      }
+    });
+    
+    // Manual pause/play controls
+    pauseBtn.addEventListener('click', () => {
+      galleryGrid.style.animationPlayState = 'paused';
+      galleryGrid.classList.add('paused');
+    });
+    
+    playBtn.addEventListener('click', () => {
+      galleryGrid.style.animationPlayState = 'running';
+      galleryGrid.classList.remove('paused');
     });
   </script>
 </body>
