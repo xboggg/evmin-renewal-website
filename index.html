@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Evans & Mina invite you to their 15th Vow Renewal: Eternal Vows - The Unveiling. Saturday, 27 December 2025 at City Hill Events Centre, Millennium City, Kasoa." />
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
@@ -989,7 +989,7 @@
       font-size: 1.1rem;
     }
 
-    /* GALLERY - UPDATED WITH CORRECT IMGBB DIRECT LINKS */
+    /* GALLERY - REMOVED CSS ANIMATION */
     .gallery-container {
       position: relative;
       overflow: hidden;
@@ -1000,32 +1000,14 @@
     .gallery-grid {
       display: flex;
       gap: 2rem;
-      animation: scrollGallery 30s linear infinite;
+      /* Removed animation: scrollGallery 30s linear infinite; */
       width: max-content;
+      transform: translateX(0); /* Used for JS-based scrolling */
+      will-change: transform; /* Hint for performance */
     }
     
-    /* FIX: Added translateZ(0) to force hardware acceleration */
-    @keyframes scrollGallery {
-      0% {
-        transform: translateX(0) translateZ(0);
-      }
-      100% {
-        transform: translateX(calc(-100% + 100vw)) translateZ(0);
-      }
-    }
-    
-    @-webkit-keyframes scrollGallery {
-      0% {
-        -webkit-transform: translateX(0) translateZ(0);
-      }
-      100% {
-        -webkit-transform: translateX(calc(-100% + 100vw)) translateZ(0);
-      }
-    }
-    
-    /* NEW CSS CLASS TO MANAGE PLAY STATE */
-    .gallery-grid.paused-by-visibility {
-        animation-play-state: paused !important;
+    .gallery-grid.paused-by-user {
+        /* This class will be added by JS when paused manually */
     }
 
     .gallery-item {
@@ -1046,7 +1028,7 @@
       border-color: var(--gold-royal);
       transform: translateY(-5px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-      /* Note: Hover pause logic is now handled in JS for consistency */
+      /* Removed animation-play-state: paused; */
     }
 
     .gallery-item img {
@@ -1375,7 +1357,8 @@
       }
       
       .gallery-grid {
-        animation: none;
+        /* If JS is active, this part is overridden */
+        transform: translateX(0) !important;
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
@@ -1461,7 +1444,7 @@
         </div>
 
         <div class="map-frame-wrapper">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.2170595351173!2d-0.422580650680659!3d5.496558199791025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdfbbbde5900137%3A0x3bcd8333d95faf8f!2sCity%20Hills%20Events%20Center!5e0!3m2!1sen!2sde!4v1763337428821!5m2!1sen!2sde"
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.714217156947!2d-0.4552467859357591!3d5.52622953578007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf559c5d070b4f%3A0x6b6d510619a86b0b!2sCity%20Hill%20Events%20Centre!5e0!3m2!1sen!2sgh!4v1628173456789!5m2!1sen!2sgh"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="City Hill Events Centre Location">
@@ -1470,7 +1453,7 @@
         <p class="muted" style="margin:0; font-size:0.85rem;">
           City Hill Events Centre, Millennium City, Kasoa
         </p>
-        <a href="#" class="btn btn-ghost" style="margin-top: 0.5rem; font-size: 0.8rem;">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=City+Hill+Events+Centre+Millennium+City+Kasoa" target="_blank" class="btn btn-ghost" style="margin-top: 0.5rem; font-size: 0.8rem;">
           <i class="fas fa-directions"></i> Get Directions
         </a>
 
@@ -1624,7 +1607,7 @@
             Let your presence reflect the beauty of lasting commitment and joyful celebration.
           </p>
           <div class="hero-actions" style="margin-top: 1.5rem; justify-content: flex-start;">
-            <a class="btn btn-primary" href="#" target="_blank"><i class="fas fa-location-crosshairs"></i> Get Directions</a>
+            <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=City+Hill+Events+Centre+Millennium+City+Kasoa" target="_blank"><i class="fas fa-location-crosshairs"></i> Get Directions</a>
           </div>
         </div>
       </div>
@@ -1774,6 +1757,14 @@
   </div>
 
   <script>
+    // Constants for Event Details
+    const EVENT_TITLE = "Evans & Mina's 15th Vow Renewal - Eternal Vows: The Unveiling";
+    const EVENT_DESCRIPTION = "Join us for our 15th vow renewal celebration. Fifteen years of love, laughter, and sacred promises renewed.";
+    const EVENT_LOCATION = "City Hill Events Centre, Millennium City, Kasoa";
+    const EVENT_START = new Date('2025-12-27T14:00:00'); // 2:00 PM
+    const EVENT_END = new Date('2025-12-27T23:00:00'); // 11:00 PM
+    const GMAPS_DIRECTIONS_URL = "https://www.google.com/maps/dir/?api=1&destination=City+Hill+Events+Centre+Millennium+City+Kasoa";
+
     // ---------- MOBILE MENU TOGGLE ----------
     const navToggle = document.getElementById('navToggle');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -1801,7 +1792,7 @@
       });
     });
 
-    // ---------- HERO SLIDER - UPDATED FOR 4 SLIDES ----------
+    // ---------- HERO SLIDER ----------
     const slides = document.querySelectorAll(".slide");
     const dotsContainer = document.getElementById("sliderDots");
     const dots = dotsContainer.querySelectorAll("button");
@@ -1840,7 +1831,7 @@
     startSlider();
 
     // ---------- COUNTDOWN ----------
-    const targetDate = new Date("2025-12-27T14:00:00");
+    const targetDate = EVENT_START;
 
     function updateCountdown() {
       const now = new Date();
@@ -2024,11 +2015,11 @@
 
       function handleCalendarAction(calendarType) {
         const eventDetails = {
-          title: "Evans & Mina's 15th Vow Renewal - Eternal Vows: The Unveiling",
-          description: "Join us for our 15th vow renewal celebration. Fifteen years of love, laughter, and sacred promises renewed.",
-          location: "City Hill Events Centre, Millennium City, Kasoa",
-          start: new Date('2025-12-27T14:00:00'),
-          end: new Date('2025-12-27T23:00:00')
+          title: EVENT_TITLE,
+          description: EVENT_DESCRIPTION,
+          location: EVENT_LOCATION,
+          start: EVENT_START,
+          end: EVENT_END
         };
 
         switch (calendarType) {
@@ -2121,64 +2112,120 @@
       }
     });
 
-    // ---------- GALLERY AUTO-SCROLL ----------
+    // ---------- GALLERY AUTO-SCROLL (JS IMPLEMENTATION) ----------
     const galleryGrid = document.getElementById('galleryGrid');
     const pauseBtn = document.getElementById('pauseBtn');
     const playBtn = document.getElementById('playBtn');
+    const scrollSpeed = 0.5; // pixels per frame (adjust for speed)
+    const padding = 20; // 2rem in CSS
     
-    // Flag to track if user paused it manually
+    let currentScroll = 0;
+    let scrollRequest = null;
+    let isScrolling = true;
     let manuallyPaused = false;
+
+    function startScroll() {
+        if (!isScrolling || scrollRequest) return;
+        
+        // Use IntersectionObserver to determine if the gallery is visible before scrolling
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Gallery is visible, start the requestAnimationFrame loop
+                    scrollRequest = window.requestAnimationFrame(animateScroll);
+                    observer.unobserve(entry.target); // Stop observing once it's visible
+                } else {
+                    // Gallery is not visible, cancel any current scroll request
+                    if (scrollRequest) {
+                        window.cancelAnimationFrame(scrollRequest);
+                        scrollRequest = null;
+                    }
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+        observer.observe(galleryGrid);
+    }
     
-    // Function to handle browser tab visibility changes
-    function handleVisibilityChange() {
-        if (document.hidden) {
-            // Tab is inactive, pause animation unless manually paused by user
-            if (!manuallyPaused) {
-                galleryGrid.classList.add('paused-by-visibility');
-            }
+    function stopScroll() {
+        if (scrollRequest) {
+            window.cancelAnimationFrame(scrollRequest);
+            scrollRequest = null;
+        }
+        isScrolling = false;
+    }
+
+    function animateScroll() {
+        if (!isScrolling) return;
+
+        const containerWidth = galleryGrid.parentElement.offsetWidth;
+        const contentWidth = galleryGrid.scrollWidth;
+        const maxScroll = contentWidth - containerWidth + padding;
+
+        currentScroll += scrollSpeed;
+
+        if (currentScroll >= maxScroll) {
+            // Reset position to loop
+            currentScroll = 0;
+        }
+
+        // Apply translation using transform for hardware acceleration
+        galleryGrid.style.transform = `translateX(-${currentScroll}px) translateZ(0)`;
+        
+        // Check visibility before requesting the next frame
+        if (!document.hidden && !manuallyPaused) {
+            scrollRequest = window.requestAnimationFrame(animateScroll);
         } else {
-            // Tab is active, resume animation if it wasn't manually paused
-            if (!manuallyPaused) {
-                galleryGrid.classList.remove('paused-by-visibility');
-            }
+            // Pause scrolling if tab is hidden or manually paused
+            scrollRequest = null;
         }
     }
     
-    // Listen for the visibility change event
-    document.addEventListener('visibilitychange', handleVisibilityChange);
+    // Resume/Pause on visibility change
+    document.addEventListener('visibilitychange', () => {
+        if (!manuallyPaused) {
+            if (document.hidden) {
+                stopScroll();
+            } else {
+                isScrolling = true;
+                startScroll();
+            }
+        }
+    });
 
     // Pause scrolling when hovering over gallery
     galleryGrid.addEventListener('mouseenter', () => {
-      galleryGrid.style.animationPlayState = 'paused';
+      stopScroll();
     });
     
     galleryGrid.addEventListener('mouseleave', () => {
-      // Resume only if not manually paused and tab is visible
-      if (!manuallyPaused && !document.hidden) {
-        galleryGrid.style.animationPlayState = 'running';
+      if (!manuallyPaused) {
+        isScrolling = true;
+        startScroll();
       }
     });
-    
+
     // Manual pause/play controls
     pauseBtn.addEventListener('click', () => {
-      galleryGrid.style.animationPlayState = 'paused';
-      galleryGrid.classList.add('paused');
-      manuallyPaused = true; // Set flag for manual pause
+      stopScroll();
+      manuallyPaused = true;
+      pauseBtn.querySelector('i').classList.remove('fa-pause');
+      pauseBtn.querySelector('i').classList.add('fa-play');
     });
     
     playBtn.addEventListener('click', () => {
-      galleryGrid.style.animationPlayState = 'running';
-      galleryGrid.classList.remove('paused');
-      manuallyPaused = false; // Clear flag for manual pause
-      galleryGrid.classList.remove('paused-by-visibility'); // Ensure visibility pause is cleared
+      isScrolling = true;
+      manuallyPaused = false;
+      startScroll();
+      playBtn.querySelector('i').classList.remove('fa-play');
+      playBtn.querySelector('i').classList.add('fa-pause');
     });
-    
-    // Initial check to ensure animation starts on load
+
+    // Initial start
     window.onload = function() {
         if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            galleryGrid.style.animationPlayState = 'running';
-            galleryGrid.classList.remove('paused');
-            galleryGrid.classList.remove('paused-by-visibility');
+            isScrolling = true;
+            startScroll();
         }
     }
   </script>
