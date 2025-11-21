@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Evans & Mina invite you to their 15th Vow Renewal: Eternal Vows - The Unveiling. Saturday, 27 December 2025 at City Hill Events Centre, Millennium City, Kasoa." />
 
-  <!-- FONTS: Elegant serif for headings + clean sans for body -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
@@ -990,7 +989,7 @@
       font-size: 1.1rem;
     }
 
-    /* GALLERY - AUTO SCROLL FIXED */
+    /* GALLERY - UPDATED WITH CORRECT IMGBB DIRECT LINKS */
     .gallery-container {
       position: relative;
       overflow: hidden;
@@ -1001,16 +1000,26 @@
     .gallery-grid {
       display: flex;
       gap: 2rem;
-      animation: scrollGallery 40s linear infinite;
+      animation: scrollGallery 30s linear infinite;
       width: max-content;
     }
-
+    
+    /* FIX: Added webkit prefix and translateZ(0) to force hardware acceleration */
     @keyframes scrollGallery {
       0% {
-        transform: translateX(0);
+        transform: translateX(0) translateZ(0);
       }
       100% {
-        transform: translateX(calc(-100% + 100vw));
+        transform: translateX(calc(-100% + 100vw)) translateZ(0);
+      }
+    }
+    
+    @-webkit-keyframes scrollGallery {
+      0% {
+        -webkit-transform: translateX(0) translateZ(0);
+      }
+      100% {
+        -webkit-transform: translateX(calc(-100% + 100vw)) translateZ(0);
       }
     }
 
@@ -1032,6 +1041,7 @@
       border-color: var(--gold-royal);
       transform: translateY(-5px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+      animation-play-state: paused;
     }
 
     .gallery-item img {
@@ -1172,10 +1182,6 @@
 
     .music-toggle:hover {
       transform: scale(1.05);
-    }
-
-    .music-toggle i {
-      font-size: 0.95rem;
     }
 
     .music-toggle.playing {
@@ -1389,7 +1395,6 @@
       </button>
     </div>
     
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
       <a href="#top">Home</a>
       <a href="#about">Our Story</a>
@@ -1401,7 +1406,6 @@
 
   <header id="top">
     <div class="slider">
-      <!-- UPDATED: 4 SLIDES WITH CORRECT IMGBB DIRECT LINKS -->
       <div class="slide active"></div>
       <div class="slide"></div>
       <div class="slide"></div>
@@ -1465,7 +1469,6 @@
           <i class="fas fa-directions"></i> Get Directions
         </a>
 
-        <!-- CALENDAR DROPDOWN IN HERO SECTION -->
         <div class="calendar-dropdown">
           <button class="calendar-toggle btn btn-ghost" style="margin-top: 0.5rem; font-size: 0.8rem;">
             <i class="fas fa-calendar-plus"></i> Add to Calendar
@@ -1491,7 +1494,6 @@
       </div>
     </div>
 
-    <!-- UPDATED: 4 DOTS FOR 4 SLIDES -->
     <div class="slider-dots" id="sliderDots">
       <button class="active" aria-label="Slide 1"></button>
       <button aria-label="Slide 2"></button>
@@ -1500,7 +1502,6 @@
     </div>
   </header>
 
-  <!-- BIBLE VERSE BANNER -->
   <div class="verse-banner">
     <div class="verse-banner-inner">
       <div class="verse-text">
@@ -1583,7 +1584,6 @@
             Your presence from the very beginning adds to the beauty of this sacred moment.
           </p>
 
-          <!-- CALENDAR DROPDOWN IN DETAILS SECTION -->
           <div class="calendar-dropdown" style="margin-top: 2rem;">
             <button class="calendar-toggle btn btn-ghost" style="width: 100%;">
               <i class="fas fa-calendar-plus"></i> Add to Calendar
@@ -1638,7 +1638,6 @@
             Please confirm your attendance via our digital form or by contacting our coordinators.
           </p>
 
-          <!-- GOOGLE FORM PRIMARY ACTION -->
           <div class="rsvp-primary-actions">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8kJHzhPGsr0GWPBMZpcC_LFmCicZ63uiL1bvuJg5sb5JKlA/viewform?usp=dialog" class="btn btn-primary" target="_blank" style="min-width: 280px;">
               <i class="fas fa-edit"></i> Fill Digital RSVP Form
@@ -1721,12 +1720,10 @@
 
       <div class="gallery-container">
         <div class="gallery-grid" id="galleryGrid">
-          <!-- UPDATED GALLERY IMAGES WITH REORDERED SEQUENCE -->
           <div class="gallery-item">
             <img src="https://i.ibb.co/3y03jtnY/gal1.jpg"
                  alt="Evans & Mina - Beautiful moment together">
           </div>
-          <!-- gal5 is now the 2nd image -->
           <div class="gallery-item">
             <img src="https://i.ibb.co/234W4XTt/gal5.jpg"
                  alt="Evans & Mina - Special moments">
@@ -1739,7 +1736,6 @@
             <img src="https://i.ibb.co/SwCHQQBq/gal4.jpg"
                  alt="Evans & Mina - Eternal commitment">
           </div>
-          <!-- gal3 is now the last image -->
           <div class="gallery-item">
             <img src="https://i.ibb.co/qYkGVXqM/gal3.jpg"
                  alt="Evans & Mina - Love story continues">
@@ -1763,7 +1759,6 @@
     <div style="margin-top:0.6rem;">Designed with love, gratitude, and joy for everyone sharing this sacred moment with us.</div>
   </footer>
 
-  <!-- BACKGROUND MUSIC - UPDATED WITH YOUR DROPBOX DIRECT LINK -->
   <audio id="bgMusic" loop preload="metadata">
     <source src="https://www.dropbox.com/scl/fi/3rxf8tcveldwsf4kb0biq/romantic.mp3?rlkey=4g79o70ztybwqjx225700yn1q&st=78wl7759&dl=1" type="audio/mpeg" />
   </audio>
@@ -1778,70 +1773,66 @@
     const navToggle = document.getElementById('navToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     
-    if (navToggle && mobileMenu) {
-      navToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      const icon = navToggle.querySelector('i');
+      if (mobileMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    // Close mobile menu when clicking on a link
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
         const icon = navToggle.querySelector('i');
-        if (mobileMenu.classList.contains('active')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-times');
-        } else {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
       });
-      
-      // Close mobile menu when clicking on a link
-      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-      mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('active');
-          const icon = navToggle.querySelector('i');
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        });
-      });
-    }
+    });
 
     // ---------- HERO SLIDER - UPDATED FOR 4 SLIDES ----------
     const slides = document.querySelectorAll(".slide");
     const dotsContainer = document.getElementById("sliderDots");
-    if (slides.length > 0 && dotsContainer) {
-      const dots = dotsContainer.querySelectorAll("button");
-      let currentSlide = 0;
-      let slideInterval = null;
+    const dots = dotsContainer.querySelectorAll("button");
+    let currentSlide = 0;
+    let slideInterval = null;
 
-      function goToSlide(index) {
-        slides[currentSlide].classList.remove("active");
-        dots[currentSlide].classList.remove("active");
-        currentSlide = index;
-        slides[currentSlide].classList.add("active");
-        dots[currentSlide].classList.add("active");
-      }
-
-      function nextSlide() {
-        let nextIndex = (currentSlide + 1) % slides.length;
-        goToSlide(nextIndex);
-      }
-
-      function startSlider() {
-        slideInterval = setInterval(nextSlide, 9000);
-      }
-
-      function stopSlider() {
-        clearInterval(slideInterval);
-      }
-
-      dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          stopSlider();
-          goToSlide(index);
-          startSlider();
-        });
-      });
-
-      startSlider();
+    function goToSlide(index) {
+      slides[currentSlide].classList.remove("active");
+      dots[currentSlide].classList.remove("active");
+      currentSlide = index;
+      slides[currentSlide].classList.add("active");
+      dots[currentSlide].classList.add("active");
     }
+
+    function nextSlide() {
+      let nextIndex = (currentSlide + 1) % slides.length;
+      goToSlide(nextIndex);
+    }
+
+    function startSlider() {
+      slideInterval = setInterval(nextSlide, 9000);
+    }
+
+    function stopSlider() {
+      clearInterval(slideInterval);
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        stopSlider();
+        goToSlide(index);
+        startSlider();
+      });
+    });
+
+    startSlider();
 
     // ---------- COUNTDOWN ----------
     const targetDate = new Date("2025-12-27T14:00:00");
@@ -1856,10 +1847,10 @@
       const secondsEl = document.getElementById("seconds");
 
       if (diff <= 0) {
-        if (daysEl) daysEl.textContent = "0";
-        if (hoursEl) hoursEl.textContent = "00";
-        if (minutesEl) minutesEl.textContent = "00";
-        if (secondsEl) secondsEl.textContent = "00";
+        daysEl.textContent = "0";
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+        secondsEl.textContent = "00";
         return;
       }
 
@@ -1869,10 +1860,10 @@
       const minutes = Math.floor((seconds % 3600) / 60);
       const secs = seconds % 60;
 
-      if (daysEl) daysEl.textContent = days;
-      if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, "0");
-      if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, "0");
-      if (secondsEl) secondsEl.textContent = secs.toString().padStart(2, "0");
+      daysEl.textContent = days;
+      hoursEl.textContent = hours.toString().padStart(2, "0");
+      minutesEl.textContent = minutes.toString().padStart(2, "0");
+      secondsEl.textContent = secs.toString().padStart(2, "0");
     }
 
     updateCountdown();
@@ -1916,59 +1907,56 @@
     const music = document.getElementById("bgMusic");
     const musicToggle = document.getElementById("musicToggle");
 
-    if (music && musicToggle) {
-      let isPlaying = false;
-      let userInteracted = false;
+    let isPlaying = false;
+    let userInteracted = false;
 
-      function playMusic() {
-        if (!userInteracted) {
-          music.volume = 0.3;
-          music.play().then(() => {
-            isPlaying = true;
-            musicToggle.classList.add("playing");
-            musicToggle.querySelector("span").textContent = "Pause Music";
-            userInteracted = true;
-          }).catch(e => {
-            musicToggle.querySelector("span").textContent = "Click to Play";
-          });
+    function playMusic() {
+      if (!userInteracted) {
+        music.volume = 0.3;
+        music.play().then(() => {
+          isPlaying = true;
+          musicToggle.classList.add("playing");
+          musicToggle.querySelector("span").textContent = "Pause Music";
+          userInteracted = true;
+        }).catch(e => {
+          console.log("Auto-play prevented, waiting for user interaction", e);
+          musicToggle.querySelector("span").textContent = "Click to Play";
+        });
+      } else {
+        if (isPlaying) {
+          music.pause();
+          isPlaying = false;
+          musicToggle.classList.remove("playing");
+          musicToggle.querySelector("span").textContent = "Play Music";
         } else {
-          if (isPlaying) {
-            music.pause();
-            isPlaying = false;
-            musicToggle.classList.remove("playing");
-            musicToggle.querySelector("span").textContent = "Play Music";
-          } else {
-            music.play();
-            isPlaying = true;
-            musicToggle.classList.add("playing");
-            musicToggle.querySelector("span").textContent = "Pause Music";
-          }
+          music.play();
+          isPlaying = true;
+          musicToggle.classList.add("playing");
+          musicToggle.querySelector("span").textContent = "Pause Music";
         }
       }
-
-      musicToggle.addEventListener("click", playMusic);
-
-      document.addEventListener('click', function() {
-        if (!userInteracted) {
-          userInteracted = true;
-          if (musicToggle.classList.contains('playing') && !isPlaying) {
-            music.play().then(() => {
-              isPlaying = true;
-            });
-          }
-        }
-      }, { once: true });
     }
+
+    musicToggle.addEventListener("click", playMusic);
+
+    document.addEventListener('click', function() {
+      if (!userInteracted) {
+        userInteracted = true;
+        if (musicToggle.classList.contains('playing') && !isPlaying) {
+          music.play().then(() => {
+            isPlaying = true;
+          });
+        }
+      }
+    }, { once: true });
 
     // ---------- NAVBAR SCROLL EFFECT ----------
     window.addEventListener("scroll", () => {
       const nav = document.querySelector(".nav");
-      if (nav) {
-        if (window.scrollY > 50) {
-          nav.classList.add("scrolled");
-        } else {
-          nav.classList.remove("scrolled");
-        }
+      if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
       }
     });
 
@@ -2076,6 +2064,7 @@
         const start = details.start.toISOString().replace(/-|:|\.\d+/g, '');
         const end = details.end.toISOString().replace(/-|:|\.\d+/g, '');
         
+        // This is a minimal .ics file for Apple/iOS, embedded in a data URI
         return `data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:${start}%0ADTEND:${end}%0ASUMMARY:${encodeURIComponent(details.title)}%0ADESCRIPTION:${encodeURIComponent(details.description)}%0ALOCATION:${encodeURIComponent(details.location)}%0AEND:VEVENT%0AEND:VCALENDAR`;
       }
 
@@ -2127,45 +2116,40 @@
       }
     });
 
-    // ---------- GALLERY AUTO-SCROLL - SIMPLE AND RELIABLE ----------
-    function initGalleryScroll() {
-      const galleryGrid = document.getElementById('galleryGrid');
-      const pauseBtn = document.getElementById('pauseBtn');
-      const playBtn = document.getElementById('playBtn');
-      
-      if (galleryGrid) {
-        // Make sure animation is applied
-        galleryGrid.style.animation = 'scrollGallery 40s linear infinite';
-        
-        // Hover controls
-        galleryGrid.addEventListener('mouseenter', function() {
-          this.style.animationPlayState = 'paused';
-        });
-        
-        galleryGrid.addEventListener('mouseleave', function() {
-          this.style.animationPlayState = 'running';
-        });
-        
-        // Button controls
-        if (pauseBtn) {
-          pauseBtn.addEventListener('click', function() {
-            galleryGrid.style.animationPlayState = 'paused';
-          });
-        }
-        
-        if (playBtn) {
-          playBtn.addEventListener('click', function() {
-            galleryGrid.style.animationPlayState = 'running';
-          });
-        }
-      }
-    }
-
-    // Initialize gallery when page loads
-    document.addEventListener('DOMContentLoaded', initGalleryScroll);
+    // ---------- GALLERY AUTO-SCROLL ----------
+    const galleryGrid = document.getElementById('galleryGrid');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const playBtn = document.getElementById('playBtn');
     
-    // Backup initialization
-    setTimeout(initGalleryScroll, 100);
+    // Pause scrolling when hovering over gallery
+    galleryGrid.addEventListener('mouseenter', () => {
+      galleryGrid.style.animationPlayState = 'paused';
+    });
+    
+    galleryGrid.addEventListener('mouseleave', () => {
+      if (!galleryGrid.classList.contains('paused')) {
+        galleryGrid.style.animationPlayState = 'running';
+      }
+    });
+    
+    // Manual pause/play controls
+    pauseBtn.addEventListener('click', () => {
+      galleryGrid.style.animationPlayState = 'paused';
+      galleryGrid.classList.add('paused');
+    });
+    
+    playBtn.addEventListener('click', () => {
+      galleryGrid.style.animationPlayState = 'running';
+      galleryGrid.classList.remove('paused');
+    });
+    
+    // Initial check to ensure animation starts on load
+    window.onload = function() {
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            galleryGrid.style.animationPlayState = 'running';
+            galleryGrid.classList.remove('paused');
+        }
+    }
   </script>
 </body>
 </html>
