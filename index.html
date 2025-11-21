@@ -1774,7 +1774,7 @@
     <span>Play Music</span>
   </div>
 
-  <script>
+<script>
     // ---------- MOBILE MENU TOGGLE ----------
     const navToggle = document.getElementById('navToggle');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -2121,32 +2121,49 @@
       }
     });
 
-    // ---------- GALLERY AUTO-SCROLL ----------
-    const galleryGrid = document.getElementById('galleryGrid');
-    const pauseBtn = document.getElementById('pauseBtn');
-    const playBtn = document.getElementById('playBtn');
-    
-    // Pause scrolling when hovering over gallery
-    galleryGrid.addEventListener('mouseenter', () => {
-      galleryGrid.style.animationPlayState = 'paused';
-    });
-    
-    galleryGrid.addEventListener('mouseleave', () => {
-      if (!galleryGrid.classList.contains('paused')) {
-        galleryGrid.style.animationPlayState = 'running';
+    // ---------- GALLERY AUTO-SCROLL FIX ----------
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryGrid = document.getElementById('galleryGrid');
+      const pauseBtn = document.getElementById('pauseBtn');
+      const playBtn = document.getElementById('playBtn');
+      
+      // Make sure elements exist before adding event listeners
+      if (galleryGrid && pauseBtn && playBtn) {
+        console.log('Gallery elements found, setting up auto-scroll...');
+        
+        // Pause scrolling when hovering over gallery
+        galleryGrid.addEventListener('mouseenter', function() {
+          this.style.animationPlayState = 'paused';
+          console.log('Gallery paused');
+        });
+        
+        galleryGrid.addEventListener('mouseleave', function() {
+          this.style.animationPlayState = 'running';
+          console.log('Gallery playing');
+        });
+        
+        // Manual pause/play controls
+        pauseBtn.addEventListener('click', function() {
+          galleryGrid.style.animationPlayState = 'paused';
+          console.log('Gallery paused via button');
+        });
+        
+        playBtn.addEventListener('click', function() {
+          galleryGrid.style.animationPlayState = 'running';
+          console.log('Gallery playing via button');
+        });
+        
+        // Force start the animation
+        galleryGrid.style.animation = 'scrollGallery 30s linear infinite';
+        
+      } else {
+        console.log('Gallery elements not found:', {
+          galleryGrid: !!galleryGrid,
+          pauseBtn: !!pauseBtn,
+          playBtn: !!playBtn
+        });
       }
     });
-    
-    // Manual pause/play controls
-    pauseBtn.addEventListener('click', () => {
-      galleryGrid.style.animationPlayState = 'paused';
-      galleryGrid.classList.add('paused');
-    });
-    
-    playBtn.addEventListener('click', () => {
-      galleryGrid.style.animationPlayState = 'running';
-      galleryGrid.classList.remove('paused');
-    });
-  </script>
+</script>
 </body>
 </html>
